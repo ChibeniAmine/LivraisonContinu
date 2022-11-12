@@ -4,11 +4,12 @@ pipeline
         stages {
            stage ('Pull') {
                steps {
-                  script{
-                     checkout([$class: 'GITSCM', branches: [[name: '*/master']],
-                      userRemoteConfigs: [[
-                         url: 'https://github.com/ChibeniAmine/LivraisonContinu.git']]])
-                        }
+                  
+                     echo 'Pulling from Git' ;
+                     git branch: 'master',
+                     url : 'https://github.com/ChibeniAmine/LivraisonContinu.git' ;
+                        
+
                       }
                           }
                 }
