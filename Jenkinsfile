@@ -17,7 +17,7 @@ pipeline
             stage ('Build') {
                steps {
                      script {
-                          sh " cd /Myapp "
+                          sh " cd /Myapp/node_modules "
                           sh " ansible-playbook Ansible/build.yml -i Ansible/inventory/host.yml "
                             }
                      }
