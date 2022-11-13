@@ -8,6 +8,6 @@
 - name: push to dockerhub
   docker_image:
     name: devops:latest
-    repository: chibeniamine/FrontCD
+    repository: chibeniamine/Frontcd
     push: yes
     source: local
