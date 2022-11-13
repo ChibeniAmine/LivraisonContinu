@@ -4,11 +4,11 @@
   docker_image:
     name: devops
     build:
-    path: /var/lib/jenkins/workspace/LivraisonContinue
-    pull: no
-    source: build
-    state: present
-    force_source: true
+      path: /var/lib/jenkins/workspace/LivraisonContinue
+      pull: no
+      source: build
+      state: present
+      force_source: true
 - name: run container docker
   docker_container:
     name: myapp_container
@@ -16,5 +16,4 @@
     state: started
     recreate: true
     ports:
-    
       - "4200:80"
