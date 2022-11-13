@@ -1,11 +1,20 @@
 ---
-    - name: build container image
-      docker_image:
-        name: devops
-        build:
-          path: /var/lib/jenkins/workspace/LivraisonContinue
-          source: build
-        
-        
-        
+# tasks file for docker
+- name: create image docker
+  docker_image:
+    name: devops
+    build:
+     path: /var/lib/jenkins/workspace/LC
+     pull: no
+    source: build
+    state: present
+    force_source: true
+- name: run container img
+  docker_container:
+    name: project_container
+    image: devops:latest
+    state: started
+    recreate: true
+    ports:
+     - "4200:80"
         
