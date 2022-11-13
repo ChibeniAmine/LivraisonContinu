@@ -5,8 +5,8 @@
         build:
           path: /var/lib/jenkins/workspace/LivraisonContinue
           source: build
-          pull: no
-          force_source: true
-        state: present
+        pull: no
+        force_source: true
+        
         
         
