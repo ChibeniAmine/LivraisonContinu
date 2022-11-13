@@ -23,6 +23,42 @@ pipeline
                             }
                      }
                             }
+          
+          
+          
+          stage('DockerImage'){
+    steps {
+
+          script{
+          sh "ansible-playbook Ansible/docker.yml -i Ansible/inventory/host.yml"
+}
+
+
+}
+}
+
+stage('Push to Dockerhub'){
+    steps {
+
+          script{
+          sh "ansible-playbook Ansible/docker-registry.yml -i Ansible/inventory/host.yml"
+}
+
+
+}
+}
+
+stage('Monitoring_With_docker-compose'){
+    steps {
+
+          script{
+          sh "ansible-playbook Ansible/docker-compose.yml -i Ansible/inventory/host.yml"
+}
+
+
+}
+}
+          
 
 
                 }
