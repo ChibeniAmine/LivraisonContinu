@@ -6,9 +6,8 @@
     build:
     path: /var/lib/jenkins/workspace/Second_Pipeline
     pull: no
-    source: build
     state: present
-    force_source: true
+    force: true
 - name: run container docker
   docker_container:
     name: myapp_container
