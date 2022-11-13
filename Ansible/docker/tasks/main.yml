@@ -2,12 +2,12 @@
 # tasks file for docker
 - name: create image docker
   docker_image:
-    name: devops
     build:
-    path: /var/lib/jenkins/workspace/Second_Pipeline
-    pull: no
-    state: present
-    force: true
+      name: devops
+      path: /var/lib/jenkins/workspace/Second_Pipeline
+      pull: no
+      state: present
+      force: true
 - name: run container docker
   docker_container:
     name: myapp_container
