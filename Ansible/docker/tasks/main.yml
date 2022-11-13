@@ -1,11 +1,11 @@
 ---
 # tasks file for docker
 - name: create image docker
-   community.docker.docker_image:
+   docker_image:
     name: devops
     build:
       path: /var/lib/jenkins/workspace/Second_Pipeline
-    source: build
+      source: build
     state: present
     name: devops
     pull: no
