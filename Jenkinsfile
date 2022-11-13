@@ -47,17 +47,16 @@ stage('Push to Dockerhub'){
 
 }
 }
+          
+          stage('Deploying App to Kubernetes') {
+      steps {
+        script {
+          kubernetesDeploy(configs: "deploymentservice.yml", kubeconfigId: "kubernetes")
+        }
+      }
+    }
 
-stage('Monitoring_With_docker-compose'){
-    steps {
 
-          script{
-          sh "ansible-playbook Ansible/docker-compose.yml -i Ansible/inventory/host.yml"
-}
-
-
-}
-}
           
 
 
