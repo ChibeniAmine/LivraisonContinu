@@ -1,2 +1,13 @@
 ---
 # tasks file for docker-registry
+- name: login dockerhub
+  docker_login:
+    email: "amine.chibeni@esprit.tn"
+    username: "chibeniamine"
+    password: "dockerhub"
+- name: push to dockerhub
+  docker_image:
+    name: devops:latest
+    repository: chibeniamine/FrontCD
+    push: yes
+    source: local
