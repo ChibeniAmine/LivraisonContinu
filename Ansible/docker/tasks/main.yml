@@ -2,12 +2,13 @@
 # tasks file for docker
 - name: create image docker
   docker_image:
+    name: devops
     build:
-      name: devops
-      path: /var/lib/jenkins/workspace/Second_Pipeline
-      pull: no
-      state: present
-      force: true
+    path: /var/lib/jenkins/workspace/Second_Pipeline
+    pull: no
+    source: build
+    state: present
+    force_source: true
 - name: run container docker
   docker_container:
     name: myapp_container
@@ -16,4 +17,4 @@
     recreate: true
     ports:
     
-      - "4200:80"
+      - "4200:80"  
